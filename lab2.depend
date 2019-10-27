@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1572191247 source:c:\users\strievskiy-n\documents\Програмирование\3 курс\lab2\lab2lib.cpp
+	"lab2Lib.h"
+
+1572191955 c:\users\strievskiy-n\documents\Програмирование\3 курс\lab2\lab2lib.h
+	<cstdlib>
+	<iostream>
+	<cstring>
+	<string>
+
+1572191382 source:c:\users\strievskiy-n\documents\Програмирование\3 курс\lab2\main.cpp
+	<iostream>
+	"lab2Lib.h"
+
+1572192229 source:c:\users\strievskiy-n\documents\Програмирование\3 курс\lab2\lab2libr.cpp
+	"lab2Lib.h"
+
