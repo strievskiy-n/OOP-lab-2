@@ -1,11 +1,11 @@
 #include <iostream>
-#include "lab2Lib.h"
+#include "lab2Libr.h"
 using namespace std;
 
 int main()
 {
    cout<<"Ener color of your arrow: ";
-   string color;
+   int color;
    cin>>color;
    cout<<"Ener x and y of your arrow: "<<endl;
    int x;
@@ -21,8 +21,14 @@ int main()
    int height;
    cin>>height;
    Arrow ar(color, x, y, length, height);
-   ar.print();
-
+   ar.getBorderColor();
+   ar.retX();
+   ar.retY();
+   ar.info();
+   float perimether, area;
+   ar.calcParams(perimether, area);
+   cout<<"Arrow perimether: "<<perimether<<endl;
+   cout<<"Arrow area: "<<area<<endl;
    return 0;
 
 }

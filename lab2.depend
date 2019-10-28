@@ -8,10 +8,17 @@
 	<cstring>
 	<string>
 
-1572191382 source:c:\users\strievskiy-n\documents\Програмирование\3 курс\lab2\main.cpp
+1572296981 source:c:\users\strievskiy-n\documents\Програмирование\3 курс\lab2\main.cpp
 	<iostream>
-	"lab2Lib.h"
+	"lab2Libr.h"
 
-1572192229 source:c:\users\strievskiy-n\documents\Програмирование\3 курс\lab2\lab2libr.cpp
-	"lab2Lib.h"
+1572296621 source:c:\users\strievskiy-n\documents\Програмирование\3 курс\lab2\lab2libr.cpp
+	<cmath>
+	"lab2Libr.h"
+
+1572296525 c:\users\strievskiy-n\documents\Програмирование\3 курс\lab2\lab2libr.h
+	<cstdlib>
+	<iostream>
+	<cstring>
+	<string>
 
