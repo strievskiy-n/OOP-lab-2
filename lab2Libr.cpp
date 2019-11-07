@@ -19,10 +19,11 @@ void Figure::move(int dx, int dy)// сместить фигуру на (dx,dy) – только видимую
     {
         x+=dx;
         y+=dy;
+        draw();
     }
     else
     {
-        cout<<"This figure is not visible";
+        cout<<"This figure is not visible"<<endl;
     }
 }
 
@@ -31,10 +32,11 @@ void Figure::setBorderColor(int c) // установить цвет фигуры – только видимой
     if(visible)
     {
         this->c=c;
+        draw();
     }
     else
     {
-        cout<<"This figure is not visible";
+        cout<<"This figure is not visible"<<endl;
     }
 }
 
@@ -48,6 +50,10 @@ void Figure::setVisible( bool isVisible ) // показать/спрятать фигуру
     if (isVisible)
     {
         visible=isVisible;
+        if (visible)
+        {
+            draw();
+        }
     }
 }
 
@@ -85,7 +91,20 @@ void Arrow::calcParams( float& perimeter, float& area ) const // вычислить перим
 }
 void Arrow::draw() const
 {
-    cout<<"DROWING ARROW";
+    if(isVisible())
+    {
+    cout<<"#### ARROW ####"<<endl;
+    cout<<"x: "<<x<<" y: "<<y<<endl;
+    cout<<"border: "<<getBorderColor()<<endl;
+    cout<<"visible: yes"<<endl;
+    cout<<"length: "<<length<<endl;
+    cout<<"height: "<<height<<endl;
+    cout<<"##############"<<endl;
+    }
+    else
+    {
+        cout<<"Your arrow is not visible"<<endl;
+    }
 }
 void Arrow::info()
 {
