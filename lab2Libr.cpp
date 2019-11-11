@@ -47,14 +47,11 @@ int Figure::getBorderColor() const // получить цвет
 
 void Figure::setVisible( bool isVisible ) // показать/спрятать фигуру
 {
-    if (isVisible)
-    {
-        visible=isVisible;
+        visible=!isVisible;
         if (visible)
         {
             draw();
         }
-    }
 }
 
 bool Figure::isVisible() const // признак видимости
@@ -62,13 +59,7 @@ bool Figure::isVisible() const // признак видимости
     return visible;
 }
 
-void Figure::draw() const{
-}
 
-void Figure::calcParams( float& perimeter, float& area ) const
-{
-
-}
 int Figure::retX()
 {
     return x;
@@ -77,6 +68,12 @@ int Figure::retY()
 {
     return y;
 }
+void  Figure::setNewXY(int x, int y)
+{
+    this->x=x;
+    this->y=y;
+}
+
 
 Arrow::Arrow() : Arrow(0, 0, 0, 2, 1)
 {
@@ -113,4 +110,64 @@ void Arrow::info()
     cout<<"length: "<<length<<endl;
     cout<<"height: "<<height<<endl;
     return;
+}
+void Arrow::SetSizes(double length, double height)
+{
+    this->length=length;
+    this->height=height;
+    draw();
+}
+double Arrow::getHeight() const
+{
+    return height;
+}
+double Arrow::getLength() const
+{
+    return length;
+}
+
+void FilledArrow::SetFillColor(int k)
+{
+    this->k=k;
+    draw();
+}
+void FilledArrow::EmptyArrow(int& c, int& x, int& y, double& length, double& height)
+{
+    c = getBorderColor();
+    x = retX();
+    y = retY();
+    length = getLength();
+    height = getHeight();
+}
+
+void FilledArrow::draw() const
+{
+    if(isVisible())
+    {
+    cout<<"#### FILLED ARROW ####"<<endl;
+    cout<<"x: "<<x<<" y: "<<y<<endl;
+    cout<<"border: "<<getBorderColor()<<endl;
+    cout<<"visible: yes"<<endl;
+    cout<<"fill: "<<k<<endl;
+    cout<<"length: "<<getLength()<<endl;
+    cout<<"height: "<<getHeight()<<endl;
+    cout<<"##############"<<endl;
+    }
+    else
+    {
+        cout<<"Your arrow is not visible"<<endl;
+    }
+}
+
+void FilledArrow::setBorderColor(int p)
+{
+    if(k!=p)
+    {
+        Figure::setBorderColor(p);
+        draw();
+    }
+    else
+    {
+        cout<<"color matching!"<<endl;
+    }
 }
