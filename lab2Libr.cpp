@@ -47,7 +47,7 @@ int Figure::getBorderColor() const // получить цвет
 
 void Figure::setVisible( bool isVisible ) // показать/спрятать фигуру
 {
-        visible=!isVisible;
+        visible=isVisible;
         if (visible)
         {
             draw();
